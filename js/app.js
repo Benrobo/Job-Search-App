@@ -10,7 +10,8 @@ function animateTyping(){
     // Header h2, and h3
     new TypeIt(h2, {
         speed: 50,
-        waitUntilVisible: true
+        waitUntilVisible: true,
+        cursor: false,
       })
         .type("Gtt", {delay: 300})
         .move(-1)
@@ -33,7 +34,8 @@ function animateTyping(){
     // H3
     new TypeIt(h3, {
         speed: 50,
-        waitUntilVisible: true
+        waitUntilVisible: true,
+        cursor: false
       })
         .type("1500", {delay: 300})
         .move(-0)
@@ -41,23 +43,16 @@ function animateTyping(){
         .delete(3)
         .type('5')
         .move('END')
-        .type(' Jos')
-        .pause(300)
-        .move(-2)
-        .type("b")
-        .pause(500)
+        .type(' Jobs')
         .move("END")
-        .type(' Founed.')
-        .move(-0)
-        .pause(500)
-        .delete(2)
-        .type("d")
+        .type(' Found.')
         .pause(500)
         .go();
     // input form element
     new TypeIt(".search-inp", {
         strings: "Search Your Field",
-        waitUntilVisible: true
+        waitUntilVisible: true,
+        cursor: false,
     }).go();
 }
 
