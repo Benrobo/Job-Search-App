@@ -47,8 +47,7 @@ function appendJobs(company, logo, roleName, postedTime, type, location, applica
     // log(requirements)
     boxes.innerHTML += `
         <div class="box">
-            <div class="panel" data-aos="zoom-in-down"
-            data-aos-duration="1500">
+            <div class="panel" data-aos="zoom-in-down">
             <div class="logo">
                 <img src="${logo}" alt="" class="job-logo">
             </div>
