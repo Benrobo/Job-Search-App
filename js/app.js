@@ -118,7 +118,7 @@ function darkMode(){
         let theme = localStorage.getItem("theme")
         if(theme == null){
             icon.setAttribute("name", newname)
-            swapStyle("style.css")
+            swapStyle("dark.css")
         }
         else if(theme == "dark.css"){
             icon.setAttribute("name", newname)
