@@ -103,7 +103,7 @@ body{
 .search-bar{
     position:absolute;
     width:50%;
-    height:auto;
+    height:100vh;
     left:50%;
     top:42%;
     transform: translate(-50%, -10%);

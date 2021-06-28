@@ -4,8 +4,10 @@ function log(n){
 
 function toggleExpand(){
     let panel = document.querySelectorAll(".panel")
-
     for(var i=0; i<panel.length; i++){
+        
+        panel[i].setAttribute("data-aos", "fade-down")
+        log(panel[i])
         panel[i].onclick = function(e){
             var expand = this.nextElementSibling;
             
@@ -47,7 +49,7 @@ function appendJobs(company, logo, roleName, postedTime, type, location, applica
     // log(requirements)
     boxes.innerHTML += `
         <div class="box">
-            <div class="panel" data-aos="zoom-in-down">
+            <div class="panel">
             <div class="logo">
                 <img src="${logo}" alt="" class="job-logo">
             </div>
@@ -118,12 +120,9 @@ function darkMode(){
         let theme = localStorage.getItem("theme")
         if(theme == null){
             icon.setAttribute("name", newname)
-            swapStyle("dark.css")
+            swapStyle("light.css")
         }
-        else if(theme == "dark.css"){
-            icon.setAttribute("name", newname)
-            swapStyle("style.css")
-        }else if(theme == "style.css"){
+        else{
             swapStyle("dark.css")
             icon.setAttribute("name", "sunny-outline")
         }
