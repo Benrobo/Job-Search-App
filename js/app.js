@@ -116,8 +116,11 @@ function darkMode(){
     icon.onclick = (e)=>{
 
         let theme = localStorage.getItem("theme")
-        log("Theme" + theme)
-        if(theme == "dark.css"){
+        if(theme == null){
+            icon.setAttribute("name", newname)
+            swapStyle("style.css")
+        }
+        else if(theme == "dark.css"){
             icon.setAttribute("name", newname)
             swapStyle("style.css")
         }else if(theme == "style.css"){
