@@ -11,7 +11,6 @@ function animateTyping(){
     new TypeIt(h2, {
         speed: 50,
         waitUntilVisible: true,
-        cursor: false,
       })
         .type("Gtt", {delay: 300})
         .move(-1)
