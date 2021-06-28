@@ -2,12 +2,68 @@ function log(n){
     return console.log(n)
 }
 
+
+function animateTyping(){
+    let h2 = document.querySelector(".h2")
+    let h3 = document.querySelector(".h3")
+    // Get The Jobs Of Your Life
+    // Header h2, and h3
+    new TypeIt(h2, {
+        speed: 50,
+        waitUntilVisible: true
+      })
+        .type("Gtt", {delay: 300})
+        .move(-1)
+        .delete(1)
+        .type('e')
+        .move('END')
+        .type(' Remoe')
+        .pause(300)
+        .move(-1)
+        .type("t")
+        .pause(500)
+        .move("END")
+        .type(' Jobs Herr')
+        .move(0)
+        .delete(1)
+        .type("e")
+        .pause(500)
+        .go();
+
+    // H3
+    new TypeIt(h3, {
+        speed: 50,
+        waitUntilVisible: true
+      })
+        .type("1500", {delay: 300})
+        .move(-0)
+        .pause(800)
+        .delete(3)
+        .type('5')
+        .move('END')
+        .type(' Jos')
+        .pause(300)
+        .move(-2)
+        .type("b")
+        .pause(500)
+        .move("END")
+        .type(' Founed.')
+        .move(-0)
+        .pause(500)
+        .delete(2)
+        .type("d")
+        .pause(500)
+        .go();
+    // input form element
+    new TypeIt(".search-inp", {
+        strings: "Search Your Field",
+        waitUntilVisible: true
+    }).go();
+}
+
 function toggleExpand(){
     let panel = document.querySelectorAll(".panel")
     for(var i=0; i<panel.length; i++){
-        
-        panel[i].setAttribute("data-aos", "fade-down")
-        log(panel[i])
         panel[i].onclick = function(e){
             var expand = this.nextElementSibling;
             
@@ -23,7 +79,9 @@ async function fetchJobs(){
     let res = await fetch(url)
     let data = await res.json()
 
+    
     getJobs(data)
+    animateTyping()
 }
 fetchJobs()
 
