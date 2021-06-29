@@ -214,7 +214,12 @@ async function filterJobs(txt){
     let data = await res.json()
 
     let result = data.filter((val)=>{
-        return val.roleName.toLowerCase().includes(txt)
+        if(val.roleName.toLowerCase().includes(txt) || val.type.toLowerCase().includes(txt) || val.company.toLowerCase().includes(txt) || val.requirements.content.toLowerCase().includes(txt)){
+            return true
+        }else{
+            return false
+        }
+        // return val.roleName.toLowerCase().includes(txt)
         // return txt == data.roleName
     })
     
