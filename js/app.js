@@ -188,3 +188,46 @@ function darkMode(){
 }
 darkMode()
 
+
+
+function searchJobs(){
+    let searchinp = document.querySelector(".search-inp");
+    let searchbtn =document.querySelector(".search-btn")
+
+    searchbtn.onclick = (e)=>{
+        e.preventDefault()
+        
+        let searchtxt = searchinp.value
+
+        filterJobs(searchtxt)
+    }
+}
+searchJobs()
+
+
+async function filterJobs(txt){
+    let boxes = document.querySelector(".boxes")
+    let error = document.querySelector(".error")
+    boxes.innerHTML = ""
+    let url = "js/data.json"
+    let res = await fetch(url)
+    let data = await res.json()
+
+    let result = data.filter((val)=>{
+        return val.roleName.toLowerCase().includes(txt)
+        // return txt == data.roleName
+    })
+    
+    if(result == ""){
+        error.innerHTML = `Search result not found: <b>${txt}</b>`
+        return
+    }
+    result.forEach((val)=>{
+        error.innerHTML = ""
+        let {company, logo, roleName, postedTime, type, location, applicationLink, requirements} = val
+
+        appendJobs(company, logo, roleName, postedTime, type,location, applicationLink, requirements)
+    })
+
+
+}
