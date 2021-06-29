@@ -253,6 +253,7 @@ body{
     overflow:hidden;
     transition:all .1s ease;
     z-index: 2;
+    color: #000;
 }
 .section .boxes .box .expand.active{
     height:auto;
