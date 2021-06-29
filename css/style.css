@@ -282,5 +282,5 @@ body{
     text-align:start;
 }
 .section .boxes .box .expand .main .body h5{
-    color:#000;
+    color:#000 !important;
 }
